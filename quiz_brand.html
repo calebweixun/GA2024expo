@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlobalAct：測出你的品牌行銷影響力</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="intro" class="question active">
+        <h1>測出你的品牌行銷影響力</h1>
+        <p>
+          為你的品牌打打分，看看它是否元氣滿滿，還是需要「品牌補給站」的加持！
+        </p>
+        <button id="start-button">開始測驗</button>
+      </div>
+
+      <div id="question-1" class="question" data-points="">
+        <h2>1. 你的品牌有靈魂嗎？</h2>
+        <div class="answers">
+          <button data-points="3">當然有！還會發光！</button>
+          <button data-points="1">大概有吧，但有點隱隱約約</button>
+          <button data-points="0">靈魂迷路中，請求GPS救援</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="question-2" class="question" data-points="">
+        <h2>2. 你能一秒說出你的目標客群是誰嗎？</h2>
+        <div class="answers">
+          <button data-points="3">一秒搞定，描述清清楚楚！</button>
+          <button data-points="1">要想一會兒，可能記不全</button>
+          <button data-points="0">啊，目標客群是啥？</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="question-3" class="question" data-points="">
+        <h2>3. 你的Logo、色彩、字體是一致的，還是像「品牌大雜燴」？</h2>
+        <div class="answers">
+          <button data-points="3">一致又時尚，品牌視覺100分！</button>
+          <button data-points="1">其實還好，還能救一救</button>
+          <button data-points="0">啊……好像沒人提過這事？</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="question-4" class="question" data-points="">
+        <h2>4. 試過短影音或和KOL合作嗎？</h2>
+        <div class="answers">
+          <button data-points="2">當然有，潮流我們懂！</button>
+          <button data-points="1">偶爾試過，但還不熟悉</button>
+          <button data-points="0">沒有，我們可能需要年輕化一下</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="question-5" class="question" data-points="">
+        <h2>5. 你的業務團隊有「方向盤」嗎？</h2>
+        <div class="answers">
+          <button data-points="2">當然有！目標清晰，執行精準</button>
+          <button data-points="1">有點模糊，方向感時有時無</button>
+          <button data-points="0">沒有，業務全憑「自由發揮」</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="question-6" class="question" data-points="">
+        <h2>6. 你的品牌有在定期「算命」嗎？</h2>
+        <div class="answers">
+          <button data-points="3">
+            當然有！我們的策略每季都規劃得清清楚楚
+          </button>
+          <button data-points="1">偶爾會優化，但常常「想到再說」</button>
+          <button data-points="0">策略分析？呃……我們的策略更多靠直覺</button>
+        </div>
+        <div class="nav-buttons">
+          <button class="prev-button">回上題</button>
+        </div>
+      </div>
+
+      <div id="result" class="result">
+        <h2>測驗結果</h2>
+        <p id="result-text"></p>
+        <button id="restart-button">再測一次</button>
+        <button id="share-button">分享結果</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let totalPoints = 0;
+        const questions = document.querySelectorAll(".question");
+        let currentQuestionIndex = 0;
+        const pointsHistory = [];
+
+        const startButton = document.getElementById("start-button");
+        const restartButton = document.getElementById("restart-button");
+        const shareButton = document.getElementById("share-button");
+
+        startButton.addEventListener("click", startQuiz);
+        restartButton.addEventListener("click", restartQuiz);
+        shareButton.addEventListener("click", shareResult);
+
+        document.querySelectorAll(".answers button").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const points = parseInt(event.target.getAttribute("data-points"));
+            pointsHistory.push(points);
+            totalPoints += points;
+            console.log(totalPoints);
+            nextQuestion();
+          });
+        });
+
+        document.querySelectorAll(".prev-button").forEach((button) => {
+          button.addEventListener("click", prevQuestion);
+        });
+
+        function startQuiz() {
+          document.getElementById("intro").classList.remove("active");
+          currentQuestionIndex = 1;
+          totalPoints = 0;
+          questions[currentQuestionIndex].classList.add("active");
+          console.log(document.getElementById("intro"));
+          console.log(questions[currentQuestionIndex]);
+        }
+
+        function nextQuestion() {
+          questions[currentQuestionIndex].classList.remove("active");
+          currentQuestionIndex++;
+
+          if (currentQuestionIndex < questions.length) {
+            questions[currentQuestionIndex].classList.add("active");
+          } else {
+            showResult(totalPoints);
+          }
+        }
+
+        function prevQuestion() {
+          if (currentQuestionIndex > 0) {
+            questions[currentQuestionIndex].classList.remove("active");
+            totalPoints -= pointsHistory.pop();
+            currentQuestionIndex--;
+            questions[currentQuestionIndex].classList.add("active");
+          }
+        }
+
+        function showResult(points) {
+          const resultDiv = document.getElementById("result");
+          const resultText = document.getElementById("result-text");
+          let resultCategory = "";
+
+          if (points <= 3) {
+            resultCategory = "小嫩苜蓿芽級";
+          } else if (points <= 7) {
+            resultCategory = "可愛小白菜級";
+          } else if (points <= 11) {
+            resultCategory = "成長杏鮑菇級";
+          } else if (points <= 14) {
+            resultCategory = "熟成哈密瓜級";
+          } else {
+            resultCategory = "萬能紅石榴級";
+          }
+
+          resultText.textContent = `您的分數是 ${points}，屬於：${resultCategory}`;
+          resultDiv.classList.add("active");
+          questions[currentQuestionIndex - 1].classList.remove("active");
+        }
+
+        function restartQuiz() {
+          totalPoints = 0;
+          currentQuestionIndex = 0;
+          pointsHistory.length = 0;
+          document.getElementById("result").classList.remove("active");
+          document.getElementById("intro").classList.add("active");
+        }
+
+        function shareResult() {
+          html2canvas(document.querySelector(".container")).then((canvas) => {
+            canvas.toBlob((blob) => {
+              const file = new File([blob], "result.png", {
+                type: "image/png",
+              });
+              const data = {
+                files: [file],
+                title: "測驗結果",
+                text: "快來看看我的品牌行銷影響力！",
+              };
+              navigator.share(data).catch(console.error);
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
