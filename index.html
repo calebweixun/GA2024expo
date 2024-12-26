@@ -4,42 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GlobalAct Expo QuizGame</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-      }
-      .container {
-        text-align: center;
-      }
-      button {
-        padding: 10px 20px;
-        margin: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: white;
-      }
-      button:hover {
-        background-color: #0056b3;
-      }
-    </style>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <button onclick="window.location.href='/GA2024expo/quiz_brand.html'">
-        測出你的品牌行銷影響力
-      </button>
-      <button onclick="window.location.href='/GA2024expo/quiz_personal.html'">
-        測出你的斜槓行銷鈔能力
-      </button>
+    <div class="dflex-col text-center g30 bg0">
+      <h1 class="h1rotate">
+        測試我的行銷斜槓能力「植」<br />or 「測試我的品牌」
+      </h1>
+      <img class="img-home" src="img/question/home.png" alt="homepage" />
+      <div class="dflex-col w-80 g30">
+        <button onclick="window.location.href='/GA2024expo/quiz_brand.html'">
+          測出你的品牌行銷影響力
+        </button>
+        <button onclick="window.location.href='/GA2024expo/quiz_personal.html'">
+          測出你的斜槓行銷鈔能力
+        </button>
+      </div>
     </div>
   </body>
 </html>
