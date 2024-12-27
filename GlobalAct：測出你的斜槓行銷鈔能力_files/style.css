@@ -48,23 +48,20 @@ p {
 
 h1{
   font-size: 32px;
-  font-weight: bolder;
+  font-weight: bold;
   /* padding-top: 180px; */
   width: 100%;
 }
 
 h2{
-  font-size: 24px;
-  font-weight: bolder;
+  font-size: 28px;
+  font-weight: bold;
   text-align:center;
-  width: 90%;
+  width: 100%;
   /* padding-top: 20%; */
   line-height: 1.2;
 }
 
-.fz40 {
-  font-size: 40px;
-}
 .h1rotate{
   transform: rotate(-2.8deg);
   font-size: 26px;
@@ -95,6 +92,7 @@ h2{
 
 .jc-top{
   justify-content: flex-start;
+  margin-top: 30%;
 }
 
 .padding-LR{
@@ -157,21 +155,17 @@ h2{
   background-position: top center;  /* 調整背景圖片位置 */
 }
 
-.q-img{
-  width: 60%;
-}
-
 button {
   padding: 10px 0px;
+  
   width: 100%;
   font-size: 16px;
-  font-weight: normal;
   cursor: pointer;
   border: none;
   border-radius: 15px;
   background-color: #f9f4f1;
   color: #1c1c28;
-  
+  font-weight: bold;
 }
 button:hover {
   background-color: #f9f4f1;
@@ -212,13 +206,7 @@ button:hover {
   text-align: center;
 }
 .result.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  display: block;
 }
 .nav-buttons {
   margin-top: 10px;
@@ -236,21 +224,4 @@ button:hover {
 }
 .nav-buttons button:hover {
   background-color: #5a6268;
-}
-
-@media (max-height: 700px) {
-  h2{
-    width: 100%;
-    font-size: 20px;
-  }
-  .q-img{
-    width: 50%;
-    padding-top: 10px;
-    padding-bottom: 0px;
-  }
-  .answers button {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
 }
