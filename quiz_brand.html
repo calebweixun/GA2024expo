@@ -9,11 +9,16 @@
     <script src="html2canvas.min.js"></script>
   </head>
   <body>
-    <div id="main" class="m0auto dflex-col text-center bg1">
+    <div id="main" class="dflex-col text-center window bg1 bg jc-sp-bt">
+      <img
+        class="logo-pd-top top-logo"
+        src="img/bg-toplogo.png"
+        alt="GA-Logo"
+      />
       <div id="intro" class="question active">
         <h1>測出你的<br />品牌行銷影響力</h1>
         <p style="width: 1080px">&nbsp;</p>
-        <div class="dflex-row w-100 g30">
+        <div class="dflex-row w-90 g30">
           <button id="start-button">開始測驗</button>
           <button onclick="window.location.href='/GA2024expo/'">
             回到主選單
@@ -22,7 +27,6 @@
       </div>
 
       <div id="question-1" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你的品牌有靈魂嗎？</h2>
         <img class="q-img" src="img/question/b1.png" alt="" />
         <div class="answers">
@@ -36,7 +40,6 @@
       </div>
 
       <div id="question-2" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你能一秒說出你的目標客群是誰嗎？</h2>
         <img class="q-img" src="img/question/b2.png" alt="" />
         <div class="answers">
@@ -50,7 +53,6 @@
       </div>
 
       <div id="question-3" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你的Logo、色彩、字體是一致的<br />還是像「品牌大雜燴」？</h2>
         <img class="q-img" src="img/question/b3.png" alt="" />
         <div class="answers">
@@ -64,7 +66,6 @@
       </div>
 
       <div id="question-4" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>試過短影音或和KOL合作嗎？</h2>
         <img class="q-img" src="img/question/b4.png" alt="" />
         <div class="answers">
@@ -78,7 +79,6 @@
       </div>
 
       <div id="question-5" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你的業務團隊有「方向盤」嗎？</h2>
         <img class="q-img" src="img/question/b5.png" alt="" />
         <div class="answers">
@@ -92,7 +92,6 @@
       </div>
 
       <div id="question-6" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你的品牌有在定期「算命」嗎？</h2>
         <img class="q-img" src="img/question/b6.png" alt="" />
         <div class="answers">
@@ -108,10 +107,9 @@
       </div>
 
       <div id="result" class="result">
-        <p style="width: 1080px">&nbsp;</p>
         <h2 id="result-text" class="fz36"></h2>
-        <img id="result-imgs" class="w-100" src="" alt="result" />
-        <div class="dflex-row w-100 g30 padding-LR">
+        <img id="result-imgs" class="result-img" src="" alt="result" />
+        <div class="dflex-row w-90 g30 padding-LR">
           <button id="restart-button">再測一次</button>
           <button id="share-button">分享結果</button>
           <button onclick="window.location.href='/GA2024expo/'">
@@ -119,6 +117,7 @@
           </button>
         </div>
       </div>
+      <img class="logo-pd-bt bt-logo" src="img/bg-logo.png" alt="GA-Logo" />
     </div>
 
     <script>

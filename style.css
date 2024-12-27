@@ -19,15 +19,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
+  overflow-y: auto;
 }
 
 
 #main{
   background-color: #e9aeae;
-}
-
-.result{
-  max-width: 100%;
 }
 
 img{
@@ -65,6 +63,7 @@ h2{
 .fz36 {
   font-size: 36px;
 }
+
 .h1rotate{
   transform: rotate(-2.8deg);
   font-size: 26px;
@@ -97,6 +96,14 @@ h2{
   justify-content: flex-start;
 }
 
+.jc-sp-ar{
+  justify-content: space-around;
+}
+
+.jc-sp-bt{
+  justify-content: space-between;
+}
+
 .padding-LR{
   padding-left: 5%;
   padding-right: 5%;
@@ -112,6 +119,10 @@ h2{
 
 .w-100{
   width: 100%;
+}
+
+.w-90{
+  width: 90%;
 }
 
 .w-80{
@@ -134,45 +145,57 @@ h2{
   text-align: center;
 }
 
-.bg0 {
-  max-width: 1080px; /* 最大寬度為螢幕寬度 */
-  height: 100vh;   /* 高度設為螢幕高度 */
-  margin: 0 auto;
-  background-image: url(img/bg0.png);
-  background-size: cover; /* 讓背景圖片完全顯示，不會裁切 */
-  background-repeat: no-repeat;
-  background-position: top center; /* 背景圖片居中 */
-  overflow: hidden;
+.window {
+  height: 100vh;
+  max-width: 100%;
 }
 
+.bg0 {
+  background-image: url(img/bg0.png);
+}
 
 .bg1 {
-  max-width: 1080px; /* 最大寬度為 800px */
-  height: 100vh;
-  margin: 0 auto;
   background-image: url(img/bg1.png);
-  background-size: cover;
+}
+
+.bg{
+  background-size: contain;
   background-repeat: no-repeat;
-  overflow: hidden;
-  background-position: top center;  /* 調整背景圖片位置 */
+  background-position: top center; /* 背景圖片居中 */
+}
+
+.top-logo {
+  width: 20%;
 }
 
 .q-img{
-  width: 60%;
+  width: 40%;
+}
+
+.bt-logo{
+  width: 30%;
+}
+
+.logo-pd-top{
+  padding-top: 5%;
+}
+
+.result-img{
+  width: 90%;
 }
 
 button {
   padding: 10px 0px;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   border: none;
   border-radius: 15px;
   background-color: #f9f4f1;
   color: #1c1c28;
-  
 }
+
 button:hover {
   background-color: #f9f4f1;
 }
@@ -184,11 +207,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  justify-items: stretch;
   align-items: center;
-  width: 100%;
+  width: 40%;
   margin: 0 auto;
-  padding-left: 5%;
-  padding-right: 5%;
   text-align: center;
 }
 .answers {
@@ -202,7 +224,7 @@ button:hover {
   padding: 10px 0 10px 0;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
 }
 .answers button:hover {
   background-color: #0056b3;
@@ -210,13 +232,15 @@ button:hover {
 .result {
   display: none;
   text-align: center;
+  max-width: 100%;
+
 }
 .result.active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
 }
@@ -238,13 +262,79 @@ button:hover {
   background-color: #5a6268;
 }
 
+@media (max-width: 1025px) {
+
+  .top-logo{
+    width: 30%;
+  }
+
+  .logo-pd-bt{
+    padding-bottom: 5%;
+  }
+
+  .question.active {
+    width: 60%;
+  }
+
+  .result.active {
+    width: 75%;
+  }
+
+  .logo-sz{
+    width: 60%;
+  }
+  .answers button {
+    font-size: 16px;
+  }
+
+  .bg{
+    background-size: contain ;
+  }
+
+  .window{
+    max-width: 70%;
+  }
+  .q-img{
+    width: 50%;
+  }
+
+  .result-img{
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 800px) {
+    .bg{
+      background-size: cover;
+      max-width: 100%;
+    }
+
+    .question.active{
+      width: 100%;
+    }
+
+    .bt-logo{
+      width: 60%;
+    }
+
+    .top-logo{
+      width: 40%;
+    }
+
+    .result.active {
+      width: 100%;
+    }
+}
+
+
 @media (max-height: 700px) {
   h2{
     width: 100%;
     font-size: 20px;
   }
   .q-img{
-    width: 50%;
+    width: 35%;
     padding-top: 10px;
     padding-bottom: 0px;
   }
@@ -252,5 +342,14 @@ button:hover {
     font-size: 14px;
     font-weight: bold;
   }
-  
+
+  .bg{ 
+    overflow: hidden;
+  }
+
+  button{
+    font-size: 14px;
+  }
+
+
 }

@@ -9,11 +9,16 @@
     <script src="html2canvas.min.js"></script>
   </head>
   <body>
-    <div id="main" class="dflex-col text-center bg1">
+    <div id="main" class="dflex-col text-center window bg1 bg jc-sp-bt">
+      <img
+        class="logo-pd-top top-logo"
+        src="img/bg-toplogo.png"
+        alt="GA-Logo"
+      />
       <div id="intro" class="question active">
         <h1>測出你的<br />斜槓行銷鈔能力</h1>
         <p style="width: 1080px">&nbsp;</p>
-        <div class="dflex-row w-100 g30">
+        <div class="dflex-row w-90 g30">
           <button id="start-button">開始測驗</button>
           <button onclick="window.location.href='/GA2024expo/'">
             回到主選單
@@ -22,11 +27,10 @@
       </div>
 
       <div id="question-1" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
-        <h2>如果要幫一家賣咖啡的品牌找出客群<br />應該怎麼做？</h2>
+        <h2>你會怎麼幫一家賣咖啡的品牌找出客群？</h2>
         <img class="q-img" src="img/question/p1.png" alt="" />
         <div class="answers">
-          <button data-points="3">找所有愛喝咖啡的網友</button>
+          <button data-points="3">找所有愛喝咖啡的網友（越多越好）</button>
           <button data-points="2">找年輕人，因為他們愛喝手沖咖啡</button>
           <button data-points="1">
             找一群壓力大的上班族<br />讓他們「咖啡續命」
@@ -39,7 +43,6 @@
       </div>
 
       <div id="question-2" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>
           老闆要你想一個吸睛的活動<br />創造更高的營業額<br />下面哪個是你的答案？
         </h2>
@@ -56,7 +59,6 @@
       </div>
 
       <div id="question-3" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>朋友開店，讓你幫忙寫宣傳貼文<br />下面哪個文案是你的風格？</h2>
         <img class="q-img" src="img/question/p3.png" alt="" />
         <div class="answers">
@@ -73,17 +75,14 @@
       </div>
 
       <div id="question-4" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
-        <h2>
-          如果需要用幾句話說服人<br />購買一款高單價的藝妓咖啡豆<br />你會怎麼表達？
-        </h2>
+        <h2>你會怎麼用幾句話說服人<br />購買一款高單價的藝妓咖啡豆？</h2>
         <img class="q-img" src="img/question/p4.png" alt="" />
         <div class="answers">
           <button data-points="2">直接講重點，告訴他買了有多划算</button>
           <button data-points="3">寫個小故事，讓產品看起來很溫暖</button>
           <button data-points="1">加點幽默和創意，讓人看了忍不住笑出來</button>
           <button data-points="4">
-            述說咖啡豆的手沖場景<br />描繪它能為生活帶來的質感
+            述說咖啡豆手沖場景，描繪為生活帶來的質感
           </button>
           <button data-points="0">真的有點困難，我需要模仿對象！</button>
         </div>
@@ -93,7 +92,6 @@
       </div>
 
       <div id="question-5" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>你需要製作一隻爆款短影音<br />前5秒要安排什麼樣的內容呢？</h2>
         <img class="q-img" src="img/question/p5.png" alt="" />
         <div class="answers">
@@ -109,7 +107,6 @@
       </div>
 
       <div id="question-6" class="question" data-points="">
-        <p style="width: 1080px">&nbsp;</p>
         <h2>老闆要你設計一張質感海報吸引顧客<br />參考資料會從哪裡搜尋？</h2>
         <img class="q-img" src="img/question/p6.png" alt="" />
         <div class="answers">
@@ -125,10 +122,9 @@
       </div>
 
       <div id="result" class="result">
-        <p style="width: 1080px">&nbsp;</p>
         <h2 id="result-text" class="fz36"></h2>
-        <img id="result-imgs" class="w-100" src="" alt="result" />
-        <div class="dflex-row w-100 g30 padding-LR">
+        <img id="result-imgs" class="result-img" src="" alt="result" />
+        <div class="dflex-row w-90 g30 padding-LR">
           <button id="restart-button">再測一次</button>
           <button id="share-button">分享結果</button>
           <button onclick="window.location.href='/GA2024expo/'">
@@ -136,6 +132,7 @@
           </button>
         </div>
       </div>
+      <img class="logo-pd-bt bt-logo" src="img/bg-logo.png" alt="GA-Logo" />
     </div>
 
     <script>
